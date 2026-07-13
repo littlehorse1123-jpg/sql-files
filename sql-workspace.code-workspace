@@ -1,0 +1,44 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.associations": {
+      "*.sql": "sql",
+      "*.ddl": "sql",
+      "*.dml": "sql"
+    },
+    "sqltools.useConnectionLabelAsDescription": true,
+    "editor.wordWrap": "on",
+    "editor.fontSize": 14,
+    "workbench.colorTheme": "Default Dark+",
+    "editor.fontFamily": "'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.tokenColorCustomizations": {
+      "textMateRules": [
+        {
+          "scope": [
+            "keyword",
+            "storage.type",
+            "support.type",
+            "variable",
+            "entity.name.function",
+            "string",
+            "comment"
+          ],
+          "settings": {
+            "fontStyle": "italic"
+          }
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "mtxr.sqltools",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-json"
+    ]
+  }
+}
