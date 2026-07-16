@@ -10,7 +10,7 @@
                   try_cast(json_extract_scalar(params, '$.def') as double) AS revenue   
 
                FROM pub_1805.arrowpuzzle_android 
-               WHERE dt >= '2026-06-29' 
+               WHERE dt >= '2026-07-09' 
                AND event_name = 'IPD' 
     ), 
     cleaned AS (  
@@ -60,7 +60,7 @@
 
 
 
---------------------------启动
+--------------------------启动DAU----------------
 
 WITH raw AS (  
                 SELECT
@@ -118,7 +118,7 @@ WITH raw AS (
 
 
 
--------------------------------------------------------------------------------------------
+-----------------------------------------------------填充--------------------------------------
 
 with load_start as
 (
@@ -219,7 +219,7 @@ group by load_start.dt,
         END
 ;
 
-
+------------------------新增用户
 
                 SELECT
                     dt,
@@ -245,7 +245,7 @@ group by load_start.dt,
                         WHEN country IN ('NZ', 'FJ', 'PG', 'KI', 'TO', 'SB', 'VU', 'NR', 'WS', 'NC', 'PF', 'NU', 'TK', 'FM', 'MH', 'GU', 'MP', 'AS', 'UM') THEN '大洋洲' 
                         ELSE '其他' 
                     END AS country_region,
-                    json_extract_scalar(params, '$.media_source') as media_source,
+                    json_extract_scalar(params, '$.media_source') as media_source, --可能重复
                     count(distinct bundle_id)  as cnt_uid
 
                     
@@ -281,7 +281,7 @@ group by load_start.dt,
 
 
 
-
+------------------留存
 
 WITH base_install AS (
     SELECT

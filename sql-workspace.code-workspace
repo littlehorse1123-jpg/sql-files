@@ -12,20 +12,26 @@
     },
     "sqltools.useConnectionLabelAsDescription": true,
     "editor.wordWrap": "on",
-    "editor.fontSize": 14,
-    "workbench.colorTheme": "Default Dark+",
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "Dark+",
     "editor.fontFamily": "'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace",
     "editor.tokenColorCustomizations": {
       "textMateRules": [
         {
           "scope": [
-            "keyword",
-            "storage.type",
-            "support.type",
-            "variable",
-            "entity.name.function",
-            "string",
-            "comment"
+                    "variable",
+                    "support",
+                    "entity",
+                    "keyword",
+                    "storage",
+                    "constant",
+                    "string",
+                    "comment",
+                    "meta",
+                    "markup",
+                    "variable.language.sql",
+                    "meta.column-name",
+                    ""
           ],
           "settings": {
             "fontStyle": "italic"
